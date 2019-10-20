@@ -1,0 +1,9 @@
+#game-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#game-list > div {
+  margin-bottom: 8px;
+}

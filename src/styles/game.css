@@ -1,0 +1,48 @@
+#game {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  align-items: center;
+}
+
+#game #teams {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+#game #teams .team {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#game #teams .team .team-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#game #teams .team .team-name,
+#game #teams .team .team-score span {
+  font-weight: bold;
+}
+
+#game #teams .team .team-score span {
+  font-size: 20px;
+}
+
+#game #teams .team .team-record {
+  font-style: italic;
+}
+
+#game hr {
+  width: 100%;
+}
+
+#game #game-extra {
+  flex: 1;
+  margin: 0px 8px;
+  text-align: center;
+}
