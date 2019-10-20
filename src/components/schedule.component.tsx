@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from "react";
 import * as scheduleService from "../services/schedule.service";
-import { Schedule as ScheduleModel } from "../models/schedule.model";
+import { Game } from "../models/schedule.model";
+import moment from "moment";
+import GamesList from "./games-list.component";
 
 const Schedule: React.FC = () => {
-  const [schedule, setSchedule] = useState<ScheduleModel | undefined>(
-    undefined
-  );
+  const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    scheduleService.getScheduleForDate("2019-10-20").then(result => {
-      setSchedule(result);
+    scheduleService.getScheduleForDate(date).then(schedule => {
+      const games = schedule.dates.filter(
+        scheduleDate => scheduleDate.date === date
+      )[0].games;
+
+      setGames(_ => games);
     });
   });
 
-  return <div id="schedule"></div>;
+  return (
+    <div id="schedule">
+      <GamesList games={games}></GamesList>
+    </div>
+  );
 };
 
 export default Schedule;

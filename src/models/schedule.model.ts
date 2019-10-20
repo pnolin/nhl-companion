@@ -8,6 +8,7 @@ export interface DateElement {
 }
 
 export interface Game {
+  gamePk: number;
   gameDate: string;
   status: Status;
   teams: Teams;
