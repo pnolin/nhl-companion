@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.body-text {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.caption-text {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
