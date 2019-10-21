@@ -1,5 +1,5 @@
 import React from "react";
-import { Game as GameModel, Away } from "../models/schedule.model";
+import { Game as GameModel, Team } from "../models/schedule.model";
 import { finalGameState, inProgressGameState } from "../constants";
 import moment from "moment";
 import "../styles/game.css";
@@ -61,14 +61,14 @@ const Game: React.FC<Props> = (props: Props) => {
   );
 };
 
-const getTeamName = (team: Away) =>
+const getTeamName = (team: Team) =>
   team.team.name
     .split(" ")
     .slice(1)
     .join(" ")
     .toLocaleUpperCase();
 
-const getTeamRecord = (team: Away) =>
+const getTeamRecord = (team: Team) =>
   `${team.leagueRecord.wins}-${team.leagueRecord.losses}-${team.leagueRecord.ot}`;
 
 const getGameExtra = (game: GameModel) => {
