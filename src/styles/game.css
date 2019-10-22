@@ -19,9 +19,15 @@
   justify-content: space-between;
 }
 
+#game #teams .team .team-logo {
+  width: 64px;
+  height: 64px;
+}
+
 #game #teams .team .team-info {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 #game #teams .team .team-name,

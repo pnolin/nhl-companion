@@ -1,6 +1,8 @@
+//TODO Investigate possibles status, maybe use abstract instead of detailed.
+
 import React from "react";
 import { Game as GameModel, Team } from "../models/schedule.model";
-import { finalGameState, inProgressGameState } from "../constants";
+import { previewGameState, liveGameState, finalGameState } from "../constants";
 import moment from "moment";
 import "../styles/game.css";
 
@@ -9,10 +11,13 @@ interface Props {
 }
 
 const Game: React.FC<Props> = (props: Props) => {
-  const gameStatus = getGameStatus(props.game);
+  const teamLogoBaseUrl =
+    "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/";
 
   const awayTeam = props.game.teams.away;
   const homeTeam = props.game.teams.home;
+
+  const gameStatus = getGameStatus(props.game);
 
   const awayTeamName = getTeamName(awayTeam);
   const homeTeamName = getTeamName(homeTeam);
@@ -20,14 +25,8 @@ const Game: React.FC<Props> = (props: Props) => {
   const awayTeamRecord = getTeamRecord(awayTeam);
   const homeTeamRecord = getTeamRecord(homeTeam);
 
-  const awayScore =
-    gameStatus !== inProgressGameState && gameStatus !== finalGameState
-      ? ""
-      : awayTeam.score;
-  const homeScore =
-    gameStatus !== inProgressGameState && gameStatus !== finalGameState
-      ? ""
-      : homeTeam.score;
+  const awayScore = shouldDisplayScore(gameStatus) ? awayTeam.score : "";
+  const homeScore = shouldDisplayScore(gameStatus) ? homeTeam.score : "";
 
   const gameExtra = getGameExtra(props.game);
 
@@ -35,6 +34,10 @@ const Game: React.FC<Props> = (props: Props) => {
     <div id="game">
       <div id="teams">
         <div className="team">
+          <img
+            src={`${teamLogoBaseUrl}${awayTeam.team.id}.svg`}
+            className="team-logo"
+          ></img>
           <div className="team-info">
             <span className="body-text team-name">{awayTeamName}</span>
             <span className="caption-text team-record">{awayTeamRecord}</span>
@@ -45,6 +48,10 @@ const Game: React.FC<Props> = (props: Props) => {
         </div>
         <hr />
         <div className="team">
+          <img
+            src={`${teamLogoBaseUrl}${homeTeam.team.id}.svg`}
+            className="team-logo"
+          ></img>
           <div className="team-info">
             <span className="team-name team-name">{homeTeamName}</span>
             <span className="caption-text team-record">{homeTeamRecord}</span>
@@ -73,7 +80,7 @@ const getTeamRecord = (team: Team) =>
 
 const getGameExtra = (game: GameModel) => {
   const gameStatus = getGameStatus(game);
-  if (gameStatus === inProgressGameState) {
+  if (gameStatus === liveGameState) {
     return "Live";
   } else if (gameStatus === finalGameState) {
     return "Final";
@@ -82,6 +89,9 @@ const getGameExtra = (game: GameModel) => {
   }
 };
 
-const getGameStatus = (game: GameModel) => game.status.detailedState;
+const getGameStatus = (game: GameModel) => game.status.abstractGameState;
+
+const shouldDisplayScore = (gameStatus: string) =>
+  gameStatus !== previewGameState;
 
 export default Game;

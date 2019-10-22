@@ -16,7 +16,7 @@ export interface Game {
 }
 
 export interface Status {
-  detailedState: string;
+  abstractGameState: string;
 }
 
 export interface Teams {
