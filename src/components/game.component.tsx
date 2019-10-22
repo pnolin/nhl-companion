@@ -42,7 +42,7 @@ const Game: React.FC<Props> = (props: Props) => {
             <span className="body-text team-name">{awayTeamName}</span>
             <span className="caption-text team-record">{awayTeamRecord}</span>
           </div>
-          <div className="team-score">
+          <div className="body-text team-score">
             <span>{awayScore}</span>
           </div>
         </div>
@@ -53,16 +53,16 @@ const Game: React.FC<Props> = (props: Props) => {
             className="team-logo"
           ></img>
           <div className="team-info">
-            <span className="team-name team-name">{homeTeamName}</span>
+            <span className="body-text team-name">{homeTeamName}</span>
             <span className="caption-text team-record">{homeTeamRecord}</span>
           </div>
-          <div className="team-score">
+          <div className="body-text team-score">
             <span>{homeScore}</span>
           </div>
         </div>
       </div>
       <div id="game-extra">
-        <span>{gameExtra}</span>
+        <span className="body-text">{gameExtra}</span>
       </div>
     </div>
   );
