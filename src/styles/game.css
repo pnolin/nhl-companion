@@ -1,4 +1,6 @@
 #game {
+  background-color: rgb(113, 113, 113);
+
   display: flex;
   flex-direction: row;
   flex: 1;
