@@ -16,7 +16,7 @@ const Schedule: React.FC = () => {
 
       setGames(_ => games);
     });
-  });
+  }, []);
 
   return (
     <div id="schedule">
