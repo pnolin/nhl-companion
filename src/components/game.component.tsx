@@ -68,12 +68,7 @@ const Game: React.FC<Props> = (props: Props) => {
   );
 };
 
-const getTeamName = (team: Team) =>
-  team.team.name
-    .split(" ")
-    .slice(1)
-    .join(" ")
-    .toLocaleUpperCase();
+const getTeamName = (team: Team) => team.team.name;
 
 const getTeamRecord = (team: Team) =>
   `${team.leagueRecord.wins}-${team.leagueRecord.losses}-${team.leagueRecord.ot}`;
