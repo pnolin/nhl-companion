@@ -29,9 +29,8 @@ function createWindow() {
       protocol: "file:",
       slashes: true
     });
+
   mainWindow.loadURL(startUrl);
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 
   mainWindow.removeMenu();
 
