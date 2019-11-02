@@ -1,6 +1,7 @@
 {
   "name": "nhl-companion",
-  "version": "0.1.0",
+  "description": "A desktop application to stay updated on the NHL.",
+  "version": "1.0.0",
   "private": true,
   "main": "electron-starter.js",
   "homepage": "./",
@@ -17,11 +18,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron": "electron .",
-    "dev": "nf start"
+    "build-react": "react-scripts build",
+    "build-windows": "npm run build-react && rm public/build -rf  && mv build public/ && npm run package-windows",
+    "electron": "electron electron-starter.js",
+    "dev": "nf start",
+    "package-windows": "electron-packager . --platform=win32 --out=out --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "electron": "^6.0.12",
+    "electron-packager": "^14.0.6",
     "foreman": "^3.0.1"
   }
 }
