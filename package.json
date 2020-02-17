@@ -19,10 +19,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build-react": "react-scripts build",
-    "build-windows": "npm run build-react && rm public/build -rf  && mv build public/ && npm run package-windows",
+    "build-windows": "npm run build-react && rm public/build -rf && mv build public/",
     "electron": "electron electron-starter.js",
     "dev": "nf start",
-    "package-windows": "electron-packager . --platform=win32 --out=out --overwrite"
+    "package-windows": "electron-packager . --platform=win32 --out=out --overwrite --icon=assets/nhl.ico"
   },
   "eslintConfig": {
     "extends": "react-app"

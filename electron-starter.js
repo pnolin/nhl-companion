@@ -18,7 +18,8 @@ function createWindow() {
     height: 500,
     webPreferences: { nodeIntegration: true },
     autoHideMenuBar: true,
-    resizable: false
+    resizable: false,
+    icon: `${__dirname}./assets/nhl.ico`
   });
 
   // and load the index.html of the app.
