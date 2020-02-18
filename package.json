@@ -6,6 +6,9 @@
   "main": "electron-starter.js",
   "homepage": "./",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@types/jest": "24.0.19",
     "@types/node": "12.11.1",
     "@types/react": "16.9.9",
