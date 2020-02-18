@@ -13,4 +13,6 @@
 
 #schedule-date-selector svg {
   margin-top: 3px;
+
+  cursor: pointer;
 }
