@@ -33,7 +33,8 @@
 }
 
 #game #teams .team .team-name,
-#game #teams .team .team-score span {
+#game #teams .team .team-score span,
+#game #game-extra {
   font-weight: bold;
 }
 
