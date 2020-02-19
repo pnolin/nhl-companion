@@ -1,0 +1,11 @@
+#schedule #game-list-wrapper {
+  flex: 1;
+  height: 440px;
+  overflow-y: auto;
+}
+
+#schedule #schedule-date-selector {
+  height: 36px;
+
+  background-color: #5a5a5a;
+}

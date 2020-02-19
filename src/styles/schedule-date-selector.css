@@ -1,0 +1,18 @@
+#schedule-date-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  font-style: italic;
+}
+
+#schedule-date-selector .body-text {
+  padding: 0px 12px;
+}
+
+#schedule-date-selector svg {
+  margin-top: 3px;
+
+  cursor: pointer;
+}
