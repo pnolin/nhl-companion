@@ -19,9 +19,12 @@ const Schedule: React.FC = () => {
     const dateAsString = moment(date).format("YYYY-MM-DD");
 
     scheduleService.getScheduleForDate(dateAsString).then(schedule => {
-      const games = schedule.dates.filter(
+      const daysThatMatchToday = schedule.dates.filter(
         scheduleDate => scheduleDate.date === dateAsString
-      )[0].games;
+      );
+
+      const games =
+        daysThatMatchToday.length > 0 ? daysThatMatchToday[0].games : [];
 
       setGames(_ => games);
     });
