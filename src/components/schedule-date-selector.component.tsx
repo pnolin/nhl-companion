@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DatePicker from "react-datepicker";
 
 import "../styles/schedule-date-selector.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface Props {
   date: Date;
@@ -15,6 +17,8 @@ enum DateMovement {
 }
 
 const ScheduleDateSelector: React.FC<Props> = (props: Props) => {
+  const [calendar, setCalendar] = useState<DatePicker | null>(null);
+
   const moveInTime = (movement: DateMovement) => {
     const newDate =
       movement === DateMovement.backward
@@ -34,9 +38,20 @@ const ScheduleDateSelector: React.FC<Props> = (props: Props) => {
         icon="angle-left"
         onClick={() => moveInTime(DateMovement.backward)}
       />
-      <span className="body-text">
-        {moment(props.date).format("DD/MM/YYYY")}
-      </span>
+      <DatePicker
+        ref={calendar => setCalendar(calendar)}
+        selected={props.date}
+        onChange={props.onDateChange}
+        todayButton="Today"
+        showYearDropdown
+        showMonthDropdown
+        dropdownMode="select"
+        customInput={
+          <span className="body-text">
+            {moment(props.date).format("DD/MM/YYYY")}
+          </span>
+        }
+      ></DatePicker>
       <FontAwesomeIcon
         icon="angle-right"
         onClick={() => moveInTime(DateMovement.forward)}
