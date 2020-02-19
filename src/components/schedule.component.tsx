@@ -36,7 +36,9 @@ const Schedule: React.FC = () => {
         date={date}
         onDateChange={onDateChange}
       ></ScheduleDateSelector>
-      <GamesList games={games}></GamesList>
+      <div id="game-list-wrapper">
+        <GamesList games={games}></GamesList>
+      </div>
     </div>
   );
 };
