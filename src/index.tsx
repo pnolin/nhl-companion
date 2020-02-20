@@ -5,9 +5,13 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faSyncAlt
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faAngleLeft, faAngleRight);
+library.add(faAngleLeft, faAngleRight, faSyncAlt);
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

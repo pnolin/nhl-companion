@@ -8,14 +8,7 @@ import GamesList from "./games-list.component";
 import "../styles/schedule.css";
 
 const Schedule: React.FC = () => {
-  const onDateChange = (newDate: Date) => {
-    setDate(newDate);
-  };
-
-  const [date, setDate] = useState(new Date());
-  const [games, setGames] = useState<Game[]>([]);
-
-  useEffect(() => {
+  const getGames = () => {
     const dateAsString = moment(date).format("YYYY-MM-DD");
 
     scheduleService.getScheduleForDate(dateAsString).then(schedule => {
@@ -28,6 +21,17 @@ const Schedule: React.FC = () => {
 
       setGames(_ => games);
     });
+  };
+
+  const onDateChange = (newDate: Date) => {
+    setDate(newDate);
+  };
+
+  const [date, setDate] = useState(new Date());
+  const [games, setGames] = useState<Game[]>([]);
+
+  useEffect(() => {
+    getGames();
   }, [date]);
 
   return (
@@ -35,6 +39,7 @@ const Schedule: React.FC = () => {
       <ScheduleDateSelector
         date={date}
         onDateChange={onDateChange}
+        onDateRefresh={getGames}
       ></ScheduleDateSelector>
       <div id="game-list-wrapper">
         <GamesList games={games}></GamesList>

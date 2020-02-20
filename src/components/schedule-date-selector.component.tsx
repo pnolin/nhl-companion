@@ -9,6 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 interface Props {
   date: Date;
   onDateChange: (newDate: Date) => void;
+  onDateRefresh: () => void;
 }
 
 enum DateMovement {
@@ -37,6 +38,7 @@ const ScheduleDateSelector: React.FC<Props> = (props: Props) => {
       <FontAwesomeIcon
         icon="angle-left"
         onClick={() => moveInTime(DateMovement.backward)}
+        className="margin-left-auto"
       />
       <DatePicker
         ref={calendar => setCalendar(calendar)}
@@ -55,6 +57,11 @@ const ScheduleDateSelector: React.FC<Props> = (props: Props) => {
       <FontAwesomeIcon
         icon="angle-right"
         onClick={() => moveInTime(DateMovement.forward)}
+      />
+      <FontAwesomeIcon
+        icon="sync-alt"
+        className="margin-left-auto"
+        onClick={props.onDateRefresh}
       />
     </div>
   );
