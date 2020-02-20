@@ -16,3 +16,7 @@
 
   cursor: pointer;
 }
+
+#schedule-date-selector svg:last-child {
+  margin-right: 8px;
+}
