@@ -71,7 +71,15 @@ const Game: React.FC<Props> = (props: Props) => {
 const getTeamName = (team: Team) => team.team.name;
 
 const getTeamRecord = (team: Team) =>
-  `${team.leagueRecord.wins}-${team.leagueRecord.losses}-${team.leagueRecord.ot}`;
+  `${team.leagueRecord.wins}-${team.leagueRecord.losses}${getTeamOtRecord(
+    team
+  )}`;
+
+const getTeamOtRecord = (team: Team) => {
+  const otRecord = team.leagueRecord.ot;
+
+  return otRecord !== undefined ? `-${otRecord}` : "";
+};
 
 const getGameExtra = (game: GameModel) => {
   const gameStatus = getGameStatus(game);

@@ -33,7 +33,7 @@ export interface Team {
 export interface LeagueRecord {
   wins: number;
   losses: number;
-  ot: number;
+  ot: number | undefined;
 }
 
 export enum Type {
