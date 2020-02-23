@@ -5,6 +5,11 @@
   height: 64px;
 
   background-image: radial-gradient(#675e5e, #2b2927);
+  cursor: pointer;
+}
+
+#menu-wrapper .menu-item:hover {
+  background-image: radial-gradient(grey, #2b2927);
 }
 
 #menu-wrapper .menu-item-icon {
