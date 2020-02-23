@@ -1,0 +1,13 @@
+#menu-wrapper .menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+
+  background-image: radial-gradient(#675e5e, #2b2927);
+}
+
+#menu-wrapper .menu-item-icon {
+  width: 24px;
+  height: 24px;
+}
