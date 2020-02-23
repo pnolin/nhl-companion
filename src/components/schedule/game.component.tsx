@@ -1,10 +1,14 @@
 //TODO Investigate possibles status, maybe use abstract instead of detailed.
 
 import React from "react";
-import { Game as GameModel, Team } from "../models/schedule.model";
-import { previewGameState, liveGameState, finalGameState } from "../constants";
+import { Game as GameModel, Team } from "../../models/schedule.model";
+import {
+  previewGameState,
+  liveGameState,
+  finalGameState
+} from "../../constants";
 import moment from "moment";
-import "../styles/game.css";
+import "../../styles/game.css";
 
 interface Props {
   game: GameModel;

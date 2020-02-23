@@ -3,7 +3,7 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DatePicker from "react-datepicker";
 
-import "../styles/schedule-date-selector.css";
+import "../../styles/schedule-date-selector.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 interface Props {

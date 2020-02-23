@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Schedule from "./components/schedule.component";
+import Schedule from "./components/schedule/schedule.component";
 
 const App: React.FC = () => {
   return (

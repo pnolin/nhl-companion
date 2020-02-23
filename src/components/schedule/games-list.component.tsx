@@ -1,7 +1,7 @@
 import React from "react";
-import { Game as GameModel } from "../models/schedule.model";
+import { Game as GameModel } from "../../models/schedule.model";
 import Game from "./game.component";
-import "../styles/games-list.css";
+import "../../styles/games-list.css";
 
 interface Props {
   games: GameModel[];
