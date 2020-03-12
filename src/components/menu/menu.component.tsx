@@ -1,12 +1,23 @@
 import React from "react";
 import MenuItem from "./menu-item.component";
+import { Page } from "../../models/Enums/page.enum";
 
 import "../../styles/menu.css";
 
-const Menu: React.FC = () => {
+interface Props {
+  currentPage: Page;
+  onPageChange: (page: Page) => void;
+}
+
+const Menu: React.FC<Props> = (props: Props) => {
   return (
     <div id="menu-wrapper">
-      <MenuItem iconName="calendar" />
+      <MenuItem
+        iconName="calendar"
+        page={Page.Schedule}
+        currentPage={props.currentPage}
+        onClick={props.onPageChange}
+      />
     </div>
   );
 };
