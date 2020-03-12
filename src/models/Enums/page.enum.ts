@@ -1,3 +1,4 @@
 export enum Page {
-  Schedule
+  Schedule,
+  Rankings
 }

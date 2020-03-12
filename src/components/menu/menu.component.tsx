@@ -18,6 +18,12 @@ const Menu: React.FC<Props> = (props: Props) => {
         currentPage={props.currentPage}
         onClick={props.onPageChange}
       />
+      <MenuItem
+        iconName="trophy"
+        page={Page.Rankings}
+        currentPage={props.currentPage}
+        onClick={props.onPageChange}
+      />
     </div>
   );
 };

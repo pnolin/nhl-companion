@@ -9,10 +9,11 @@ import {
   faAngleLeft,
   faAngleRight,
   faCalendar,
-  faSyncAlt
+  faSyncAlt,
+  faTrophy
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faAngleLeft, faAngleRight, faCalendar, faSyncAlt);
+library.add(faAngleLeft, faAngleRight, faCalendar, faSyncAlt, faTrophy);
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

@@ -1,9 +1,10 @@
 .App {
-  text-align: center;
-  background-color: rgb(33, 33, 33);
-
+  height: 476px;
   display: flex;
   flex-direction: row;
+
+  text-align: center;
+  background-color: rgb(33, 33, 33);
 }
 
 .App #menu-wrapper {
