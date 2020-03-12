@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ScheduleDateSelector from "./schedule-date-selector.component";
-import * as scheduleService from "../services/schedule.service";
-import { Game } from "../models/schedule.model";
+import * as scheduleService from "../../services/schedule.service";
+import { Game } from "../../models/schedule.model";
 import moment from "moment";
 import GamesList from "./games-list.component";
 
-import "../styles/schedule.css";
+import "../../styles/schedule.css";
 
 const Schedule: React.FC = () => {
   const getGames = () => {

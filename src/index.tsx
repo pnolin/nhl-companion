@@ -8,10 +8,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faAngleLeft,
   faAngleRight,
+  faCalendar,
   faSyncAlt
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faAngleLeft, faAngleRight, faSyncAlt);
+library.add(faAngleLeft, faAngleRight, faCalendar, faSyncAlt);
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
