@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/react-datepicker": "^2.11.0",
-    "electron": "^6.0.12",
+    "electron": "^13.6.6",
     "electron-packager": "^14.0.6",
     "foreman": "^3.0.1"
   }
